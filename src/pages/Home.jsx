@@ -1,4 +1,5 @@
 import React from 'react';
+import Latest from '../components/Latest';
 import Popular from '../components/Popular';
 
 function Home() {
@@ -6,6 +7,7 @@ function Home() {
     <div>
         <h1>Hello, World</h1>
         <Popular />
+        <Latest />
     </div>
   )
 }
