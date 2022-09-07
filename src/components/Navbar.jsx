@@ -12,9 +12,9 @@ function Navbar() {
             <Logo to={"/"}>Nomadic Fool</Logo>
         </div>
         <div className='link-container'>
-            <Navigate to={"/blogs"}>Blogs</Navigate>            
-            <Navigate to={"/"}>About me</Navigate>
-            <Navigate to={"/"}>Contact</Navigate>
+            <Navigate to={"/blogs/"}>Blogs</Navigate>            
+            <Navigate to={"/about/"}>About me</Navigate>
+            <Navigate to={"/contact/"}>Contact</Navigate>
         </div>        
     </div>
   )
@@ -23,15 +23,15 @@ function Navbar() {
 const Navigate = styled(Link)`
     text-decoration: none;
     font-size: 1.5rem;
-    color: bisque;
+    color: black;
     padding: 0rem 0.5rem;
 `;
 
 const Logo = styled(Link)`
     text-decoration: none;
     font-size: 1.5rem;
-    color: bisque;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Sans', Arial, sans-serif;
     padding: 0rem 0.5rem;
 `;
 
