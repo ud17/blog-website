@@ -1,0 +1,19 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 0%;
+    font-weight: 300;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.link-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
