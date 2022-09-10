@@ -14,7 +14,7 @@ function Navbar() {
         <div className='link-container'>
             <Navigate to={"/blogs/"}>Blogs</Navigate>            
             <Navigate to={"/about/"}>About me</Navigate>
-            <Navigate to={"/contact/"}>Contact</Navigate>
+            {/* <Navigate to={"/contact/"}>Contact</Navigate> */}
         </div>        
     </div>
   )
@@ -23,14 +23,14 @@ function Navbar() {
 const Navigate = styled(Link)`
     text-decoration: none;
     font-size: 1.5rem;
-    color: black;
+    color: bisque;
     padding: 0rem 0.5rem;
 `;
 
 const Logo = styled(Link)`
     text-decoration: none;
     font-size: 1.5rem;
-    color: black;
+    color: bisque;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Sans', Arial, sans-serif;
     padding: 0rem 0.5rem;
 `;

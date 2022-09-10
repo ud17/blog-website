@@ -33,7 +33,7 @@ function Popular() {
                             <div className='card'>
                                 <Link to={"/blog/" + blog.id}>
                                     <p>{blog.title}</p>
-                                    <img src={'https://image.shutterstock.com/image-photo/travel-photographer-equipment-on-rocky-600w-267670610.jpg'} alt="travel"/>
+                                    <img src={'../images/island.jpg'} alt="travel"/>
                                     <Gradient />
                                 </Link>
                             </div>
@@ -49,8 +49,8 @@ function Popular() {
 const Gradient = styled.div`
     z-index: 3;
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: fit-content;
+    height: fit-content;
     background: linear-gradient(rgba(0,0,0,0) , rgba(0,0,0,0.5))
 `
 

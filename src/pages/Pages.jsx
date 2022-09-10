@@ -12,7 +12,7 @@ function Pages() {
         <Route exact path="/" element={<Home />}/>
         <Route exact path="/blogs/" element={<List />} />
         <Route exact path='/about/' element={<AboutMe />}/>
-        <Route exact path="/contact/" element={<Contact />}/>
+        {/* <Route exact path="/contact/" element={<Contact />}/> */}
         <Route exact path="/blog/" element={<Blog />}/>
     </Routes>
   )

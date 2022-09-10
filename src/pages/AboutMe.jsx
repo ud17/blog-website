@@ -20,6 +20,7 @@ const AboutWrapper = styled.div`
   margin-bottom: 5rem;
   display: flex;
   justify-content: flex-start;
+  padding: 1% 10%;
 
   .active {
     background: linear-gradient(35deg, #494949, #313131);
