@@ -9,6 +9,12 @@
     width: 100%;
     height: 150px;
     background-color: #422f2f;
-    color: aliceblue;
     border-radius: 0rem 10rem 0rem 0rem;
+}
+
+.footer img {
+    display: flex;
+    width: auto;
+    height: auto;
+    margin: 0 3rem;
 }
