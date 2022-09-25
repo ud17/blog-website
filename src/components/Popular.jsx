@@ -1,49 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Popular.css';
 import {SplideSlide, Splide} from "@splidejs/react-splide";
 import '@splidejs/react-splide/css';
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
+import { useGetMostViewedBlogsQuery } from "../service/blogApi";
+const CONSTANT = require("../global/constant");
 
 function Popular() {
 
-    const [popular, setPopular] = useState([{
-        id: 1,
-        title: 'First Blog',
-        description: 'Description goes here'
-    }, {
-        id: 2,
-        title: 'Second Blog',
-        description: 'Description goes here'
-    }]);
+    const [mostViewed, setMostViewed] = useState([]);
+    const {data, isFetching} = useGetMostViewedBlogsQuery();
 
-  return (
-    <div className='container-div'>
-        <h3>Most Viewed</h3>
-        <Splide options={{
-            perPage: 3,
-            arrows: true,
-            drag: "free",
-            gap: "5rem"
-        }}>
-            {
-                popular.map((blog) => {
-                    return (
-                        <SplideSlide key={blog.id}>
-                            <div className='card'>
-                                <Link to={"/blog/" + blog.id}>
-                                    <p>{blog.title}</p>
-                                    <img src={'../images/island.jpg'} alt="travel"/>
-                                    <Gradient />
-                                </Link>
-                            </div>
-                        </SplideSlide>
-                    )
-                })
-            }
-        </Splide>
-    </div>
-  )
+    useEffect(() => {
+        const getMostViewedBlogs = data?.data;
+        setMostViewed(getMostViewedBlogs);
+    }, [data])
+
+    if(isFetching) return "Loading...";
+
+    return (
+        <div className='container-div'>
+            <h3>Most Viewed</h3>
+            <Splide options={{
+                perPage: 3,
+                arrows: true,
+                drag: "free",
+                gap: "5rem"
+            }}>
+                {
+                    mostViewed?.map((blog) => {
+                        return (
+                            <SplideSlide key={blog._id}>
+                                <div className='card'>
+                                    <Link to={"/blog/" + blog._id}>
+                                        <p>{blog.title}</p>
+                                        <img src={`${CONSTANT.baseUrl}/${blog.image}`} alt="travel"/>
+                                        <Gradient />
+                                    </Link>
+                                </div>
+                            </SplideSlide>
+                        )
+                    })
+                }
+            </Splide>
+        </div>
+    )
 }
 
 const Gradient = styled.div`

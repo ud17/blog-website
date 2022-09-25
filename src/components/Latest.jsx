@@ -4,16 +4,22 @@ import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import "../styles/Latest.css";
 import { Link } from "react-router-dom";
-import { useGetLatestBlogsQuery } from "../service/blogApi";
+import { useGetLatestBlogsQuery } from '../service/blogApi';
+const CONSTANT = require("../global/constant");
 
-function Latest() {
+const Latest = () => {
 
     const [latest, setLatest] = useState([]);
+
     // react redux returns {} by default
-    const {data, isFetching} = useGetLatestBlogsQuery();
-    console.log(data);
-    
-    if(isFetching) return "Loading...";
+    const {data, isLatestFetching} = useGetLatestBlogsQuery();
+
+    useEffect(() => {
+        const getLatestBlogs = data?.data;
+        setLatest(getLatestBlogs);
+    }, [data])
+
+    if(isLatestFetching) return "Loading...";
 
     return (
         <div className='container-div'>
@@ -26,13 +32,14 @@ function Latest() {
                 gap: "5rem"
             }}>
                 {
-                    latest.map((blog) => {
+                    latest?.map((blog) => {
+                        console.log(blog.image)
                         return (
-                            <SplideSlide key={blog.id}>
+                            <SplideSlide key={blog._id}>
                                 <div className='card'>
-                                    <Link to={"/blog/" + blog.id}>
+                                    <Link to={"/blog/" + blog._id}>
                                         <p>{blog.title}</p>
-                                        <img src={'../images/banff.jpg'} alt="travel"/>
+                                        <img src={`${CONSTANT.baseUrl}/${blog.image}`} alt="travel"/>
                                         <Gradient />
                                     </Link>
                                 </div>        
