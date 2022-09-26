@@ -3,6 +3,7 @@ import "../styles/List.css";
 import {AiFillEye} from "react-icons/ai";
 import { useState, useEffect } from 'react';
 import { useGetAllBlogsQuery } from '../service/blogApi';
+import { Link } from "react-router-dom";
 const CONSTANT = require("../global/constant");
 
 function List() {
@@ -23,12 +24,17 @@ function List() {
         list?.map((blog) => {
           return (
             <div className='card'>
-              <img src={`${CONSTANT.baseUrl}/${blog.image}`}/>
-              <h4>{blog.location}</h4>
-              <div className='view'>
-                <AiFillEye/>
-                <h5>{blog.views}</h5>
-              </div>
+              <Link to={{ 
+                  pathname: `/blog/${blog._id}`,
+                  state: blog
+                }}>
+                <img src={`${CONSTANT.baseUrl}/${blog.image}`} alt={blog.location}/>
+                <h4>{blog.location}</h4>
+                <div className='view'>
+                  <AiFillEye/>
+                  <h5>{blog.views}</h5>
+                </div>
+              </Link>
             </div>
           )
         })

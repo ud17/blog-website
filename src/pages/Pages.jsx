@@ -2,7 +2,6 @@ import React from 'react';
 import {Routes, Route} from "react-router-dom";
 import AboutMe from './AboutMe.jsx';
 import Blog from './Blog.jsx';
-import Contact from './Contact.jsx';
 import Home from "./Home.jsx";
 import List from './List.jsx';
 
@@ -13,7 +12,7 @@ function Pages() {
         <Route exact path="/blogs/" element={<List />} />
         <Route exact path='/about/' element={<AboutMe />}/>
         {/* <Route exact path="/contact/" element={<Contact />}/> */}
-        <Route exact path="/blog/" element={<Blog />}/>
+        <Route exact path="/blog/:blogId" element={<Blog />}/>
     </Routes>
   )
 }
