@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Popular.css';
+import {AiFillEye} from "react-icons/ai";
 import {SplideSlide, Splide} from "@splidejs/react-splide";
 import '@splidejs/react-splide/css';
 import { Link } from "react-router-dom";
@@ -25,6 +26,7 @@ function Popular() {
             <Splide options={{
                 perPage: 3,
                 arrows: true,
+                pagination: false,
                 drag: "free",
                 gap: "5rem"
             }}>
@@ -34,7 +36,11 @@ function Popular() {
                             <SplideSlide key={blog._id}>
                                 <div className='card'>
                                     <Link to={"/blog/" + blog._id}>
-                                        <p>{blog.title}</p>
+                                        <p>{blog.location}</p>
+                                        <div className='views'>
+                                            <AiFillEye/>
+                                            {blog.views}
+                                        </div>
                                         <img src={`${CONSTANT.baseUrl}/${blog.image}`} alt="travel"/>
                                         <Gradient />
                                     </Link>
@@ -49,7 +55,7 @@ function Popular() {
 }
 
 const Gradient = styled.div`
-    z-index: 3;
+    z-index: 8;
     position: absolute;
     width: fit-content;
     height: fit-content;

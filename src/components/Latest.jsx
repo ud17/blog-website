@@ -23,9 +23,9 @@ const Latest = () => {
 
     return (
         <div className='container-div'>
-            <h3>Newly Added</h3>
+            <h3>Recently Added</h3>
             <Splide options={{
-                perPage: 3,
+                perPage: 4,
                 arrows: true,
                 pagination: false,
                 drag: "free",
@@ -33,7 +33,6 @@ const Latest = () => {
             }}>
                 {
                     latest?.map((blog) => {
-                        console.log(blog.image)
                         return (
                             <SplideSlide key={blog._id}>
                                 <div className='card'>
