@@ -15,6 +15,9 @@ export const blogApi = createApi({
         }),
         getAllBlogs: builder.query({
             query: () => `blog/get-all-blogs`
+        }),
+        getBlogById: builder.query({
+            query: (blogId) => `blog/get-blog/${blogId}`
         })
     })
 });
@@ -22,5 +25,6 @@ export const blogApi = createApi({
 export const {
     useGetLatestBlogsQuery,
     useGetMostViewedBlogsQuery,
-    useGetAllBlogsQuery
+    useGetAllBlogsQuery,
+    useGetBlogByIdQuery
 } = blogApi;
