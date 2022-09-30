@@ -18,6 +18,13 @@ export const blogApi = createApi({
         }),
         getBlogById: builder.query({
             query: (blogId) => `blog/get-blog/${blogId}`
+        }),
+        incrementBlogView: builder.mutation({
+            query: (blogId) => ({
+                url: `blog/increment-blog-view/${blogId}`,
+                method: 'PATCH',
+                body: blogId
+            })
         })
     })
 });
@@ -26,5 +33,6 @@ export const {
     useGetLatestBlogsQuery,
     useGetMostViewedBlogsQuery,
     useGetAllBlogsQuery,
-    useGetBlogByIdQuery
+    useGetBlogByIdQuery,
+    useIncrementBlogViewMutation
 } = blogApi;
