@@ -12,34 +12,4 @@ function AboutMe() {
   )
 }
 
-const AboutWrapper = styled.div`
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding: 1% 10%;
-
-  .active {
-    background: linear-gradient(35deg, #494949, #313131);
-    color: white;
-  }
-`;
-
-const DisplayImage = styled.img`
-  height: auto; 
-  width: auto; 
-  max-width: 30rem;
-  max-height: auto;
-  object-fit: contain;
-`;
-
-const Info = styled.div`
-  margin-left: 10rem;
-
-  h3 {
-    margin-top: 0;
-  }
-`;
-
 export default AboutMe;
