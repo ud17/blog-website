@@ -16,7 +16,8 @@ const Latest = () => {
     const [incrementBlogViewById, result] = useIncrementBlogViewMutation(skipToken);
 
     // react redux returns {} by default
-    const {data, isLatestFetching} = useGetLatestBlogsQuery();
+    const {data, isError ,isLatestFetching} = useGetLatestBlogsQuery();
+    console.log(data);
 
     // get all latest blogs
     useEffect(() => {
@@ -56,7 +57,7 @@ const Latest = () => {
                                         <Gradient />
                                     </Link> */}
                                     <p>{blog.title}</p>
-                                    <img src={`${CONSTANT.baseUrl}/${blog.image}`} alt={blog.location}/>
+                                    <img src={`${CONSTANT.baseUrl}${blog.image}`} alt={blog.location}/>
                                     <Gradient />
                                 </div>        
                             </SplideSlide>
