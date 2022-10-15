@@ -23,7 +23,7 @@ function Blog() {
     <DetailWrapper>
       <Card>
         <h2>{blog?.location}</h2>
-        <img src={`${CONSTANT.baseUrl}/${blog?.image}`} alt={blog?.title} />
+        <img src={`${CONSTANT.baseUrl}${blog?.image}`} alt={blog?.title} />
         <View>
           <AiFillEye style={{marginTop: '0.3rem', marginRight: '0.3rem'}}/>
           <h4>{blog?.views}</h4>
