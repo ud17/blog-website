@@ -41,7 +41,7 @@ function Popular() {
                                             <AiFillEye/>
                                             {blog.views}
                                         </div>
-                                        <img src={`${CONSTANT.baseUrl}${blog.image}`} alt="travel"/>
+                                        <img src={`${CONSTANT.baseUrl}/${blog.image}`} alt="travel"/>
                                         <Gradient />
                                     </Link>
                                 </div>

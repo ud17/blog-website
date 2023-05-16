@@ -57,7 +57,7 @@ const Latest = () => {
                                         <Gradient />
                                     </Link> */}
                                     <p>{blog.title}</p>
-                                    <img src={`${CONSTANT.baseUrl}${blog.image}`} alt={blog.location}/>
+                                    <img src={`${CONSTANT.baseUrl}/${blog.image}`} alt={blog.location}/>
                                     <Gradient />
                                 </div>        
                             </SplideSlide>

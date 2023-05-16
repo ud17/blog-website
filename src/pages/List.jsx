@@ -28,7 +28,7 @@ function List() {
                   pathname: `/blog/${blog._id}`,
                   state: blog
                 }}>
-                <img src={`${CONSTANT.baseUrl}${blog.image}`} alt={blog.location}/>
+                <img src={`${CONSTANT.baseUrl}/${blog.image}`} alt={blog.location}/>
                 <h4>{blog.location}</h4>
                 <div className='view'>
                   <AiFillEye/>
